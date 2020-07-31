@@ -1,0 +1,60 @@
+main {
+    position: relative;
+}
+main .rank {
+    text-align: center;
+}
+main .rank h2 {
+    color: rgb(150, 148, 148);
+    margin: 30px 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table tr {
+    border-bottom: solid 1px #eee;
+    cursor: pointer;
+}
+
+table tr:hover {
+    background-color: #d4f0fd;
+}
+
+table th,
+table td {
+    text-align: center;
+    width: 25%;
+    padding: 15px 0;
+}
+
+table td.icon {
+    background-size: 35px;
+    background-position: left 5px center;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+table tr:nth-child(2) td {
+    font-size: 2rem;
+    padding: 20px 0;
+}
+table tr:nth-child(3) td {
+    font-size: 1.6rem;
+    padding: 18px 0;
+}
+table tr:nth-child(4) td {
+    font-size: 1.3rem;
+    padding: 16px 0;
+}
+table tr:nth-child(2) td:nth-child(1) {
+    color: yellow;
+}
+table tr:nth-child(3) td:nth-child(1) {
+    color: #fff;
+}
+table tr:nth-child(4) td:nth-child(1) {
+    color: rgb(146, 24, 3);
+}

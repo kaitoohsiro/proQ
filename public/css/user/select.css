@@ -1,0 +1,149 @@
+.catch {
+    position: relative;
+    display: flex;
+    align-items: center; /* 垂直中心 */
+    justify-content: center; /* 水平中心 */
+    color: #fff;
+    margin-bottom: 70px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.catch:before,
+.catch:after {
+    border-top: 1px solid;
+    content: "";
+    width: 3em; /* 線の長さ */
+}
+.catch:before {
+    margin-right: 1em; /* 文字の右隣 */
+}
+.catch:after {
+    margin-left: 1em; /* 文字の左隣 */
+}
+
+.box25 {
+    position: relative;
+    background: #a0a09f;
+    box-shadow: 0px 0px 0px 5px #a0a09f;
+    border: dashed 2px white;
+    margin: auto 10%;
+    padding: 0.2em 0.5em;
+    color: #454545;
+}
+.box25:after {
+    position: absolute;
+    content: "";
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #a0a09f #fff #a0a09f;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box25 p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.cp_ipselect {
+    position: relative;
+    width: 90%;
+    margin: 2em auto;
+    text-align: center;
+}
+.cp_sl06 {
+    position: relative;
+    font-family: inherit;
+    background-color: transparent;
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.cp_sl06:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+.cp_ipselect .cp_sl06 {
+    appearance: none;
+    -webkit-appearance: none;
+}
+.cp_ipselect select::-ms-expand {
+    display: none;
+}
+.cp_ipselect:after {
+    position: absolute;
+    top: 18px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    padding: 0;
+    content: "";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+.cp_sl06_selectlabel {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+}
+.cp_sl06:focus ~ .cp_sl06_selectlabel,
+.cp_sl06:valid ~ .cp_sl06_selectlabel {
+    color: rgba(0, 0, 0, 0.5);
+    top: -20px;
+    transition: 0.2s ease all;
+    font-size: 14px;
+}
+.cp_sl06_selectbar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.cp_sl06_selectbar:before,
+.cp_sl06_selectbar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease all;
+}
+.cp_sl06_selectbar:before {
+    left: 50%;
+}
+.cp_sl06_selectbar:after {
+    right: 50%;
+}
+.cp_sl06:focus ~ .cp_sl06_selectbar:before,
+.cp_sl06:focus ~ .cp_sl06_selectbar:after {
+    width: 50%;
+}
+.cp_sl06_highlight {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+form {
+    text-align: center;
+    padding: 20px;
+}
+.button-t {
+    background-color: dimgray;
+}
+.button-s {
+    background-color: rgb(47, 43, 68);
+}
