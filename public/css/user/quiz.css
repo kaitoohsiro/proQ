@@ -1,0 +1,19 @@
+.box123 {
+    position: relative;
+    padding: 10px;
+}
+.line1 {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+.answer {
+    width: 75%;
+}
+
+.answer_button {
+    position: relative;
+    cursor: pointer;
+    background: rgb(30, 27, 73);
+    color: #fff;
+}

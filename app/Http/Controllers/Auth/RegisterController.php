@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\ranks;
 use App\Models\score;
+use Illuminate\Support\Facades\Auth;
 
 
 class RegisterController extends Controller
@@ -44,6 +45,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    // Guardの認証方法を指定
+    protected function guard()
+    {
+        return Auth::guard('user');
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -76,12 +82,40 @@ class RegisterController extends Controller
         $ranks = new ranks();
         $user = User::where('email', '=', $data['email'])
             ->first();
-        $score::create([
-            'user_id' => $user['id']
+        $registerScore = $score::create([
+            'user_id' => $user['id'],
+            'total_score' => 0,
+            'last_score' => 0,
         ]);
-        $ranks::create([
-            'user_id' => $user['id']
-        ]);
+        $maxRank = $ranks::max("total_rank");
+        $maxRankCount = $ranks::where('total_rank', '=', $maxRank)
+            ->count();
+        $maxRankUser = $ranks::where('total_rank', '=', $maxRank)
+            ->first();
+
+        $lastUser = $score::where('user_id', '=', $maxRankUser['user_id'])
+            ->first();
+
+        if (!$maxRank) {
+            $ranks::create([
+                'user_id' => $user['id'],
+                'total_rank' => 1,
+                'last_rank' => 1,
+            ]);
+        } else if ($lastUser['total_score'] == $registerScore['total_score']) {
+            $ranks::create([
+                'user_id' => $user['id'],
+                'total_rank' => $maxRankUser['total_rank'],
+                'last_rank' => $maxRankUser['total_rank'],
+            ]);
+        } else {
+            $ranks::create([
+                'user_id' => $user['id'],
+                'total_rank' => $maxRankUser['total_rank'] + $maxRankCount,
+                'last_rank' => $maxRankUser['total_rank'] + $maxRankCount,
+            ]);
+        }
+
         return $user;
     }
 }
