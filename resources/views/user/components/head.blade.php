@@ -9,6 +9,7 @@
 
 <!-- style -->
 <link href="{{ asset('./css/user/user.css') }}" rel="stylesheet">
+<link href="{{ asset('./css/user/quiz.css') }}" rel="stylesheet">
 
 <title>proQ</title>
 @endsection

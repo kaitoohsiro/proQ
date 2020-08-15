@@ -14,8 +14,6 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
 
-
-
     /**
      * どのユーザーでもみれるスタートページ
      *
@@ -24,8 +22,9 @@ class UsersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        if (Auth::user()) {
-            $user = Auth::user();
+        // dd($user);
+        logger(1);
+        if ($user) {
             logger($user);
             return view('user/index', compact('user'));
         } else {
@@ -83,5 +82,45 @@ class UsersController extends Controller
         }
 
         return view('user.quiz.quiz', compact('quizzes'));
+    }
+
+    public function quizFinish(Request $request)
+    {
+        $resultScore = 0;
+        $totalAnswer = 0;
+        $info = array();
+        array_push(
+            $info,
+            [
+                "resultScore" => $resultScore,
+                "totalAnswer" => $totalAnswer,
+            ]
+        );
+
+        for ($i = 0; $i <= $request['count']; $i++) {
+            $quiz = 'quiz' . $i;
+            $answer = 'answer' . $i;
+            $current = 'current' . $i;
+            if ($request[$current] == $request[$answer]) {
+                $judgment = 1;
+                $resultScore++;
+                $totalAnswer++;
+            } else {
+                $judgment = 2;
+                $totalAnswer++;
+            }
+            array_push(
+                $info,
+                [
+                    "quiz" => $request[$quiz],
+                    "answer" => $request[$answer],
+                    "current" => $request[$current],
+                    "judgment" => $judgment,
+                ]
+            );
+        }
+        $info[0]["resultScore"] = $resultScore;
+        $info[0]["totalAnswer"] = $totalAnswer;
+        return view('user.quiz.result', compact("info"));
     }
 }
