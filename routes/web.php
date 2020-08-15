@@ -63,10 +63,3 @@ Route::get('/rank', 'Users\UsersController@rankShow')->name('rank');
 Route::get('/select', 'Users\UsersController@quizSelect');
 Route::get('/quiz', 'Users\UsersController@quiz');
 Route::post('/quiz/finish', 'Users\UsersController@quizFinish')->name('quizFinish');
-
-
-
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
