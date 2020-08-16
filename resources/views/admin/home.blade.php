@@ -36,7 +36,7 @@
                             @foreach ($quizzes as $quiz)
                             <tr>
                                 <th>{{ $quiz['id'] }}</th>
-                                <td data-label="問題" class="txt">{{ $quiz['question'] }}</td>
+                                <td data-label="問題" class="txt"><?= html_entity_decode($quiz['question']); ?></td>
                                 <td data-label="操作" class="price"><a href="edit/{{ $quiz['id'] }}">編集</a>/<a href="delete/{{ $quiz['id'] }}">削除</a></td>
                             </tr>
                             @endforeach

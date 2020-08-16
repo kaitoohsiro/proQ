@@ -9,7 +9,7 @@
         <div class="line1">
             <input type="hidden" name="quiz{{ $i }}" value="{{ $quizzes[$i]['question'] }}">
             <input type="hidden" name="current{{ $i }}" value="{{ $quizzes[$i]['answer'] }}">
-            {{ $quizzes[$i]['question'] }}
+            <?= html_entity_decode($quizzes[$i]['question']); ?>
             </br>
             <input class="answer" name="answer{{ $i }}" type="text">
         </div>
