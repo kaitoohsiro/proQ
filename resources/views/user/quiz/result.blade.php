@@ -27,7 +27,7 @@
     </tbody>
 </table>
 
-<form method="post" action="{{ route('rankUpdate') }}">
+<form class="form_position" method="post" action="{{ route('rankUpdate') }}">
     @csrf
     <a href="{{ route('top') }}">トップへ</a>
     <input type="hidden" name="resultScore" value="{{ $info[0]['resultScore'] }}">
