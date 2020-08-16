@@ -39,7 +39,12 @@
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@if(app('env')=='local')
 <link href="{{ asset('./css/user/result.css') }}" rel="stylesheet">
+@endif
+@if(app('env')=='production')
+<link href="{{ secure_asset('./css/user/result.css') }}" rel="stylesheet">
+@endif
 
 <head>
     @yield('head')

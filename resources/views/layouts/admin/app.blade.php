@@ -12,7 +12,12 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
+    @if(app('env')=='local')
     <link rel="stylesheet" href="{{ asset('./css/admin/login.css') }}">
+    @endif
+    @if(app('env')=='production')
+    <link href="{{ secure_asset('./css/admin/login.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body>

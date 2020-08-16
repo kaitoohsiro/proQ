@@ -48,7 +48,12 @@
 
 <head>
     @yield('head')
+    @if(app('env')=='local')
     <link rel="stylesheet" href="{{ asset('./css/user/select.css') }}">
+    @endif
+    @if(app('env')=='production')
+    <link href="{{ secure_asset('./css/user/select.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body>

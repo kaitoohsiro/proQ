@@ -1,7 +1,12 @@
 @extends('layouts.admin.app')
 
 @section('content')
+@if(app('env')=='local')
 <link href="{{ asset('./css/admin/show.css') }}" rel="stylesheet">
+@endif
+@if(app('env')=='production')
+<link href="{{ secure_asset('./css/admin/show.css') }}" rel="stylesheet">
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

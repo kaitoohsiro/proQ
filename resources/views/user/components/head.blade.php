@@ -8,8 +8,14 @@
 
 
 <!-- style -->
+@if(app('env')=='local')
 <link href="{{ asset('./css/user/user.css') }}" rel="stylesheet">
 <link href="{{ asset('./css/user/quiz.css') }}" rel="stylesheet">
+@endif
+@if(app('env')=='production')
+<link href="{{ secure_asset('./css/user/user.css') }}" rel="stylesheet">
+<link href="{{ secure_asset('./css/user/quiz.css') }}" rel="stylesheet">
+@endif
 
 <title>proQ</title>
 @endsection

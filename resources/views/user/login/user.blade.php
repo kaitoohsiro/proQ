@@ -1,8 +1,12 @@
 @extends('layouts.user.app')
 
 @section('content')
+@if(app('env')=='local')
 <link href="{{ asset('./css/user/loginUser.css') }}" rel="stylesheet">
-
+@endif
+@if(app('env')=='production')
+<link href="{{ secure_asset('./css/user/loginUser.css') }}" rel="stylesheet">
+@endif
 
 @if (session('status'))
 <div class="alert alert-success" role="alert">

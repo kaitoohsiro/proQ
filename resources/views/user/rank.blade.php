@@ -30,7 +30,12 @@
 
 <head>
     @yield('head')
+    @if(app('env')=='local')
     <link href="{{ asset('./css/user/rank.css') }}" rel="stylesheet">
+    @endif
+    @if(app('env')=='production')
+    <link href="{{ secure_asset('./css/user/rank.css') }}" rel="stylesheet">
+    @endif
 </head>
 
 <body>
