@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use app\User;
 use App\Models\score;
 use App\Models\ranks;
 use App\Models\quiz;
