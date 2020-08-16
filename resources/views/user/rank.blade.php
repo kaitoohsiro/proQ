@@ -30,7 +30,7 @@
 
 <head>
     @yield('head')
-    <link href="{{ asset('./css/user/rank.css') }}" rel="stylesheet">
+    <link href="{{ mix('./css/user/rank.css') }}" rel="stylesheet">
 </head>
 
 <body>

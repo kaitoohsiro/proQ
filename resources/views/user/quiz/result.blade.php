@@ -39,7 +39,7 @@
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<link href="{{ asset('./css/user/result.css') }}" rel="stylesheet">
+<link href="{{ mix('./css/user/result.css') }}" rel="stylesheet">
 
 <head>
     @yield('head')

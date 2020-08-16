@@ -1,7 +1,7 @@
 @extends('layouts.admin.app')
 
 @section('content')
-<link href="{{ asset('./css/admin/show.css') }}" rel="stylesheet">
+<link href="{{ mix('./css/admin/show.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

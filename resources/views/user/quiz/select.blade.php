@@ -45,7 +45,7 @@
 
 <head>
     @yield('head')
-    <link rel="stylesheet" href="{{ asset('./css/user/select.css') }}">
+    <link rel="stylesheet" href="{{ mix('./css/user/select.css') }}">
 </head>
 
 <body>
