@@ -1,7 +1,7 @@
 @extends('layouts.user.app')
 
 @section('content')
-<link href="{{ mix('./css/user/loginUser.css') }}" rel="stylesheet">
+<link href="{{ asset('./css/user/loginUser.css') }}" rel="stylesheet">
 
 
 @if (session('status'))

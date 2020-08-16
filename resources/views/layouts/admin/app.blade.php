@@ -12,7 +12,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('./css/admin/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('./css/admin/login.css') }}">
 </head>
 
 <body>
