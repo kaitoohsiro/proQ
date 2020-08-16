@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         @for ($i = 1; $i <= count($info)-1; $i++) <tr>
-            <th data-label="問題" class="txt">{{ $info[$i]["quiz"] }}</th>
+            <th data-label="問題" class="txt"><?= html_entity_decode($info[$i]["quiz"]); ?></th>
             <td data-label="答え" class="price">{{ $info[$i]["answer"] }}</td>
             <td data-label="正解" class="price">{{ $info[$i]["current"] }}</td>
             @if ($info[$i]["judgment"] == 1)
