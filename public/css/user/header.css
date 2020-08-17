@@ -1,0 +1,13 @@
+.navbar-nav {
+    text-align: right;
+}
+.nav-item {
+    list-style: none;
+}
+.nav-link {
+    color: #fff;
+    font-size: 1.3rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}

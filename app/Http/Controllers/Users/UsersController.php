@@ -22,8 +22,8 @@ class UsersController extends Controller
     public function index()
     {
         $user = Auth::user();
-        // dd($user);
-        logger(1);
+        logger($user);
+        logger("kkk");
         if ($user) {
             logger($user);
             return view('user/index', compact('user'));

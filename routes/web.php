@@ -57,9 +57,9 @@ Auth::routes([
 Route::middleware('auth:user')->group(function () {
     Route::get('/home', 'Users\LoginUserController@userPage')->name('home');
     Route::post('/quiz/result', 'Users\LoginUserController@rankUpdate')->name('rankUpdate');
+    Route::get('/', 'Users\UsersController@index')->name('top');
+    Route::get('/rank', 'Users\UsersController@rankShow')->name('rank');
+    Route::get('/select', 'Users\UsersController@quizSelect');
+    Route::get('/quiz', 'Users\UsersController@quiz');
+    Route::post('/quiz/finish', 'Users\UsersController@quizFinish')->name('quizFinish');
 });
-Route::get('/', 'Users\UsersController@index')->name('top');
-Route::get('/rank', 'Users\UsersController@rankShow')->name('rank');
-Route::get('/select', 'Users\UsersController@quizSelect');
-Route::get('/quiz', 'Users\UsersController@quiz');
-Route::post('/quiz/finish', 'Users\UsersController@quizFinish')->name('quizFinish');

@@ -1,4 +1,4 @@
-@extends('layouts.user.app')
+@extends('layouts.user.loginApp')
 
 @section('content')
 @if(app('env')=='local')
